@@ -1,10 +1,8 @@
 function createLoginTracker(userInfo) {
-  userInfo.name
-  userInfo.password
-
+  
   let attemptCount = 0
 
-  passwordCheck = (passwordAttempt) => {
+  return function (passwordAttempt) {
     attemptCount++
 
     if (passwordAttempt === userInfo.password && attemptCount <= 3) {
