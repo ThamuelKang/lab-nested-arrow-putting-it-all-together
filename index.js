@@ -9,21 +9,21 @@ function createLoginTracker(userInfo) {
       return 'Login successful'
     } else if (attemptCount < 3) {
       return `Attempt ${attemptCount}: Login failed`
-    } else {
+    } else if (attemptCount === 3) {
       return `Account locked due to too many failed login attempts`
     }
   }
 }
 
-// const user = {
-//   name: 'Samuel',
-//   password: 'Ducks'
-// }
+const user = {
+  name: 'Samuel',
+  password: 'Ducks'
+}
 
-// const login = createLoginTracker(user)
-// console.log(login("ducks"))
-// console.log(login("12321321"))
-// console.log(login("Ducks"))
+const login = createLoginTracker(user)
+console.log(login("ducks"))
+console.log(login("12321321"))
+console.log(login("Dducks"))
 
 
 
