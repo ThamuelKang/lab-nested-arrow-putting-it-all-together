@@ -1,21 +1,29 @@
 function createLoginTracker(userInfo) {
-  
+
   let attemptCount = 0
 
   return function (passwordAttempt) {
     attemptCount++
 
     if (passwordAttempt === userInfo.password && attemptCount <= 3) {
-      return console.log('Login successful')
+      return 'Login successful'
     } else if (attemptCount < 3) {
-      return console.log(`Attempt ${attemptCount}: Login failed `)
+      return `Attempt ${attemptCount}: Login failed`
     } else {
-      return console.log(`Account locked due to too many failed login attempts`)
+      return `Account locked due to too many failed login attempts`
     }
   }
 }
 
+// const user = {
+//   name: 'Samuel',
+//   password: 'Ducks'
+// }
 
+// const login = createLoginTracker(user)
+// console.log(login("ducks"))
+// console.log(login("12321321"))
+// console.log(login("Ducks"))
 
 
 
